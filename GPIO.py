@@ -8,7 +8,7 @@ class GPIO:
         file = open(PATH + "export",'w')
         file.write(str(self.pin_number))
         file.close()
-
+        
     def closePin(self):
         file = open(PATH + "unexport",'w')
         file.write(str(self.pin_number))
@@ -23,7 +23,7 @@ class GPIO:
         file = open(PATH + "gpio" + str(self.pin_number) + "/value",'w')
         file.write(str(value))
         file.close()
-
+        
     def getDirection(self):
         file = open(PATH + "gpio" + str(self.pin_number) + "/direction",'r')
         direction = file.read()
@@ -35,3 +35,15 @@ class GPIO:
         value = file.read()
         file.close()
         return value
+
+    def high(self):
+        self.setValue(1)
+
+    def low(self):
+        self.setValue(0)
+
+    def input(self):
+        self.setDirection("in")
+
+    def out(self):
+        self.setDirection("out")
