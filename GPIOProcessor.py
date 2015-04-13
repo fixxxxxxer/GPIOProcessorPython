@@ -4,6 +4,7 @@ class GPIOProcessor:
 
     def __init__(self):
         self.GPIOList = []
+        from GPIO import GPIO
         
     def getPin(self, pin_number):
         pin = GPIO(pin_number)
@@ -40,7 +41,7 @@ class GPIOProcessor:
             pin.input()
             pin.closePin()
             self.GPIOList.remove(pin)
-        print len(self.GPIOList)
+        
 
 
 

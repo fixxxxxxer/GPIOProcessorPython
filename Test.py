@@ -1,5 +1,4 @@
 from GPIOProcessor import GPIOProcessor
-from GPIO import GPIO
 import time
 
 GP = GPIOProcessor()
